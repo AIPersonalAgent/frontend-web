@@ -1,0 +1,14 @@
+{
+  "auth": {
+    "loginFailed": "Login failed",
+    "loading": "Loading...",
+    "useAuthError": "useAuth must be used within an AuthProvider"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  }
+}

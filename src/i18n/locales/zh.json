@@ -1,0 +1,14 @@
+{
+  "auth": {
+    "loginFailed": "登录失败",
+    "loading": "加载中...",
+    "useAuthError": "useAuth must be used within an AuthProvider"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认"
+  }
+}
