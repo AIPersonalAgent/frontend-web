@@ -1,0 +1,52 @@
+{
+  "auth": {
+    "loginFailed": "Login failed",
+    "loading": "Loading...",
+    "useAuthError": "useAuth must be used within an AuthProvider"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "login": {
+    "title": "AI Chatbot",
+    "subtitle": "Please enter your account information to login",
+    "username": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "loggingIn": "Logging in...",
+    "validationError": "Please enter username and password",
+    "loginError": "Login failed, please check your username and password"
+  },
+  "chat": {
+    "inputPlaceholder": "Type a message...",
+    "sendButton": "Send",
+    "sessionListTitle": "Session List",
+    "refreshSessions": "Refresh Sessions",
+    "loading": "Loading...",
+    "startConversation": "Start chatting!",
+    "welcomeTitle": "Welcome to AI Chatbot",
+    "welcomeSubtitle": "Please select a session from the left or start a new conversation",
+    "noSessions": "No session records",
+    "lastUpdate": "Last update",
+    "yesterday": "Yesterday",
+    "daysAgo": "days ago"
+  },
+  "session": {
+    "welcomeSession": "Welcome Session",
+    "techQuestion": "Technical Question"
+  },
+  "message": {
+    "receivedMessage": "Received your message",
+    "simulatedReply": "This is a simulated AI reply."
+  },
+  "error": {
+    "getSessionsFailed": "Failed to get session list",
+    "getMessagesFailed": "Failed to get messages",
+    "sendMessageFailed": "Failed to send message",
+    "useChatError": "useChat must be used within a ChatProvider"
+  }
+}

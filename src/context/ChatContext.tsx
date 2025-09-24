@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
 import { Session, Message } from '../types';
-import { ApiClient } from '../utils/api';
+import { useI18n } from '../i18n/hooks';
 
 interface ChatContextType {
   sessions: Session[];
@@ -17,7 +17,7 @@ const ChatContext = createContext<ChatContextType | undefined>(undefined);
 export const useChat = () => {
   const context = useContext(ChatContext);
   if (context === undefined) {
-    throw new Error('useChat must be used within a ChatProvider');
+    throw new Error('error.useChatError');
   }
   return context;
 };
@@ -31,6 +31,7 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   const [currentSession, setCurrentSession] = useState<Session | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useI18n();
 
   const refreshSessions = useCallback(async () => {
     try {
@@ -40,12 +41,12 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
       
       // 模拟数据
       const mockSessions: Session[] = [
-        { id: '1', title: '欢迎会话', createdAt: '2024-01-01T10:00:00Z', updatedAt: '2024-01-01T10:30:00Z' },
-        { id: '2', title: '技术问题', createdAt: '2024-01-02T14:00:00Z', updatedAt: '2024-01-02T15:00:00Z' },
+        { id: '1', title: t('session.welcomeSession'), createdAt: '2024-01-01T10:00:00Z', updatedAt: '2024-01-01T10:30:00Z' },
+        { id: '2', title: t('session.techQuestion'), createdAt: '2024-01-02T14:00:00Z', updatedAt: '2024-01-02T15:00:00Z' },
       ];
       setSessions(mockSessions);
     } catch (error) {
-      console.error('获取会话列表失败:', error);
+      console.error(t('error.getSessionsFailed'), error);
     } finally {
       setIsLoading(false);
     }
@@ -68,7 +69,7 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
       
       setMessages(mockMessages);
     } catch (error) {
-      console.error('获取消息失败:', error);
+      console.error(t('error.getMessagesFailed'), error);
     } finally {
       setIsLoading(false);
     }
@@ -99,7 +100,7 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
         const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
           sessionId: currentSession.id,
-          content: `收到您的消息: "${content}"。这是模拟的AI回复。`,
+          content: `${t('message.receivedMessage')}: "${content}"。${t('message.simulatedReply')}`,
           role: 'assistant' as const,
           timestamp: new Date().toISOString(),
         };
@@ -109,7 +110,7 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
       }, 1000);
       
     } catch (error) {
-      console.error('发送消息失败:', error);
+      console.error(t('error.sendMessageFailed'), error);
       setIsLoading(false);
     }
   }, [currentSession]);

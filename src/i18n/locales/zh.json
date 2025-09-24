@@ -1,0 +1,52 @@
+{
+  "auth": {
+    "loginFailed": "登录失败",
+    "loading": "加载中...",
+    "useAuthError": "useAuth必须在AuthProvider中使用"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认"
+  },
+  "login": {
+    "title": "AI聊天机器人",
+    "subtitle": "请输入您的账号信息登录",
+    "username": "用户名",
+    "password": "密码",
+    "loginButton": "登录",
+    "loggingIn": "登录中...",
+    "validationError": "请输入用户名和密码",
+    "loginError": "登录失败，请检查用户名和密码"
+  },
+  "chat": {
+    "inputPlaceholder": "输入消息...",
+    "sendButton": "发送",
+    "sessionListTitle": "会话列表",
+    "refreshSessions": "刷新会话",
+    "loading": "加载中...",
+    "startConversation": "开始对话吧！",
+    "welcomeTitle": "欢迎使用AI聊天机器人",
+    "welcomeSubtitle": "请从左侧选择一个会话或开始新的对话",
+    "noSessions": "暂无会话记录",
+    "lastUpdate": "最后更新",
+    "yesterday": "昨天",
+    "daysAgo": "天前"
+  },
+  "session": {
+    "welcomeSession": "欢迎会话",
+    "techQuestion": "技术问题"
+  },
+  "message": {
+    "receivedMessage": "收到您的消息",
+    "simulatedReply": "这是模拟的AI回复。"
+  },
+  "error": {
+    "getSessionsFailed": "获取会话列表失败",
+    "getMessagesFailed": "获取消息失败",
+    "sendMessageFailed": "发送消息失败",
+    "useChatError": "useChat必须在ChatProvider中使用"
+  }
+}
